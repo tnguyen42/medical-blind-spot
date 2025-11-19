@@ -1,0 +1,19 @@
+{
+  "name": "medical-blind-spot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tnguyen42/medical-blind-spot.git"
+  },
+  "author": "Thanh-Quy Nguyen & Julien Mori",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tnguyen42/medical-blind-spot/issues"
+  },
+  "homepage": "https://github.com/tnguyen42/medical-blind-spot#readme"
+}
