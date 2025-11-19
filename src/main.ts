@@ -7,14 +7,47 @@ import { graph } from "./graph/index.js";
 async function main() {
   console.log("=== Medical Research Blind Spot Analyzer - Demo ===\n");
 
-  // Test case: search for Alzheimer's disease papers
-  const rawQuery = {
-    disease: "alzheimer", // Will be normalized to "Alzheimer's disease"
-    filters: {
-      excludePediatric: true,
-      minYear: 2015,
-    },
-  };
+  // Determine which demo to run based on environment variable
+  const demoMode = process.env.DEMO_MODE || "default";
+
+  let rawQuery: any;
+
+  if (demoMode === "compare") {
+    console.log("🔬 COMPARISON MODE: Testing year filter effects\n");
+    console.log("--- Run 1: Broad search (2000-2025) ---\n");
+
+    rawQuery = {
+      disease: "alzheimer",
+      filters: {
+        excludePediatric: true,
+        minYear: 2000,
+        maxYear: 2025,
+        maxResults: 30,
+      },
+    };
+  } else if (demoMode === "recent") {
+    console.log("🔬 RECENT PAPERS MODE: Only papers from 2020+ ---\n");
+
+    rawQuery = {
+      disease: "alzheimer",
+      filters: {
+        excludePediatric: true,
+        minYear: 2020,
+        maxYear: 2025,
+        maxResults: 20,
+      },
+    };
+  } else {
+    // Default mode
+    rawQuery = {
+      disease: "alzheimer", // Will be normalized to "Alzheimer's disease"
+      filters: {
+        excludePediatric: true,
+        minYear: 2015,
+        maxResults: 20,
+      },
+    };
+  }
 
   console.log("Raw input query:", rawQuery);
   console.log("\nInvoking complete analysis pipeline...\n");
@@ -145,6 +178,39 @@ async function main() {
     // Also output as JSON for programmatic access
     console.log("\n📄 JSON Output (for programmatic use):");
     console.log(JSON.stringify(result.reportSummary, null, 2));
+  }
+
+  // Show filter effectiveness summary
+  if (result.papers.length > 0) {
+    const years = result.papers
+      .map((p) => parseInt(p.publicationDate.split("-")[0]))
+      .filter((y) => !isNaN(y))
+      .sort((a, b) => a - b);
+
+    if (years.length > 0) {
+      console.log("\n" + "=".repeat(70));
+      console.log("FILTER EFFECTIVENESS SUMMARY");
+      console.log("=".repeat(70));
+      console.log(`\n📅 Publication Year Range in Results:`);
+      console.log(`   Earliest: ${years[0]}`);
+      console.log(`   Latest: ${years[years.length - 1]}`);
+      console.log(`   Papers retrieved: ${result.papers.length}`);
+      console.log(`   Papers after quality filter: ${result.highQualityPapers.length}`);
+
+      if (rawQuery.filters?.minYear || rawQuery.filters?.maxYear) {
+        console.log(`\n🔍 Applied Filters:`);
+        if (rawQuery.filters.minYear) {
+          console.log(`   Min Year: ${rawQuery.filters.minYear}`);
+        }
+        if (rawQuery.filters.maxYear) {
+          console.log(`   Max Year: ${rawQuery.filters.maxYear}`);
+        }
+        if (rawQuery.filters.maxResults) {
+          console.log(`   Max Results: ${rawQuery.filters.maxResults}`);
+        }
+      }
+      console.log("\n" + "=".repeat(70));
+    }
   }
 }
 

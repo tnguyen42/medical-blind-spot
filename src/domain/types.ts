@@ -9,6 +9,7 @@ export interface DiseaseQuery {
     excludePediatric?: boolean;
     minYear?: number;
     maxYear?: number;
+    maxResults?: number; // Max papers to fetch from source
     language?: string;
     studyExclusions?: string[];
   };
