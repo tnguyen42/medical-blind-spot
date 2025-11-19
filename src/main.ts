@@ -7,6 +7,11 @@ import { graph } from "./graph/index.js";
 async function main() {
   console.log("=== Medical Research Blind Spot Analyzer - Demo ===\n");
 
+  // Show configuration
+  const useLLM = process.env.USE_LLM_POPULATION_ANALYSIS === "true";
+  console.log(`📊 Analysis Mode: ${useLLM ? "LLM-Powered" : "Heuristic"}`);
+  console.log(`   ${useLLM ? "⚡ Using mock LLM for demographic analysis" : "🔢 Using rule-based pattern matching"}\n`);
+
   // Determine which demo to run based on environment variable
   const demoMode = process.env.DEMO_MODE || "default";
 

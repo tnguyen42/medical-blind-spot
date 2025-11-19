@@ -8,6 +8,8 @@
     "dev": "tsx src/main.ts",
     "dev:compare": "DEMO_MODE=compare ARXIV_MAX_RESULTS_DEFAULT=30 tsx src/main.ts",
     "dev:recent": "DEMO_MODE=recent tsx src/main.ts",
+    "dev:llm": "USE_LLM_POPULATION_ANALYSIS=true tsx src/main.ts",
+    "dev:llm-compare": "USE_LLM_POPULATION_ANALYSIS=true DEMO_MODE=compare tsx src/main.ts",
     "build": "tsc",
     "start": "node dist/main.js"
   },

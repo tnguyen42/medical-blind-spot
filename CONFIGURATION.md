@@ -75,6 +75,59 @@ npm run dev:recent
 ARXIV_MAX_RESULTS_DEFAULT=50 DEMO_MODE=recent npm run dev
 ```
 
+### LLM-powered mode (mock LLM)
+```bash
+npm run dev:llm
+```
+
+### LLM-powered + comparison mode
+```bash
+npm run dev:llm-compare
+```
+
+## LLM-Powered vs Heuristic Analysis
+
+The system supports two modes for population analysis:
+
+### Heuristic Mode (Default)
+- Uses rule-based pattern matching on abstracts
+- Fast and deterministic
+- No API costs
+- Limited to keyword detection
+
+### LLM-Powered Mode
+- Uses language models for deeper semantic analysis
+- More sophisticated demographic extraction
+- Can understand context and implicit mentions
+- **Currently uses mock LLM** - returns simulated responses
+- Future: Will support real LLM APIs (OpenAI, Anthropic, etc.)
+
+To enable LLM mode:
+```bash
+USE_LLM_POPULATION_ANALYSIS=true npm run dev
+```
+
+### Implementing Real LLM Integration
+
+The mock LLM interface in `src/lib/llm.ts` is ready to be replaced with real LLM calls:
+
+```typescript
+// Current mock implementation in src/lib/llm.ts
+export async function callLLM(prompt: string, system?: string): Promise<LLMResponse> {
+  // TODO: Replace with actual LLM call
+  // Example with OpenAI:
+  // const llm = new ChatOpenAI({ modelName: "gpt-4" });
+  // const response = await llm.invoke(prompt);
+  // return { content: response.content, model: "gpt-4" };
+}
+```
+
+When ready to integrate:
+1. Install LLM SDK: `npm install @langchain/openai` or `@langchain/anthropic`
+2. Add API key to environment: `OPENAI_API_KEY=your_key`
+3. Replace mock implementation in `src/lib/llm.ts`
+4. Test with: `npm run dev:llm`
+
 ## Example Output
 
 ### Filter Effectiveness Summary
