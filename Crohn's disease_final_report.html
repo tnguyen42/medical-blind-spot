@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Research Blind Spot Analysis: Crohn's disease</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f7fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .date {
+            margin-top: 10px;
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+        
+        .section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        h3 {
+            color: #764ba2;
+            margin: 20px 0 10px 0;
+        }
+        
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .metric-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .metric-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .metric-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+        
+        .blind-spot {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 4px solid;
+        }
+        
+        .blind-spot.critical {
+            background: #fee;
+            border-color: #e53e3e;
+        }
+        
+        .blind-spot.high {
+            background: #fff3e0;
+            border-color: #ff9800;
+        }
+        
+        .blind-spot.medium {
+            background: #fff9c4;
+            border-color: #fbc02d;
+        }
+        
+        .blind-spot.low {
+            background: #e8f5e9;
+            border-color: #4caf50;
+        }
+        
+        .severity-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-right: 10px;
+        }
+        
+        .severity-badge.critical { background: #e53e3e; color: white; }
+        .severity-badge.high { background: #ff9800; color: white; }
+        .severity-badge.medium { background: #fbc02d; color: #333; }
+        .severity-badge.low { background: #4caf50; color: white; }
+        
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin: 20px 0;
+        }
+        
+        .chart-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .recommendation {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .recommendation.high-priority {
+            border-left-color: #e53e3e;
+        }
+        
+        .recommendation.medium-priority {
+            border-left-color: #ff9800;
+        }
+        
+        .recommendation.low-priority {
+            border-left-color: #4caf50;
+        }
+        
+        .priority-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        
+        .priority-badge.high { background: #e53e3e; color: white; }
+        .priority-badge.medium { background: #ff9800; color: white; }
+        .priority-badge.low { background: #4caf50; color: white; }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background: #667eea;
+            color: white;
+            font-weight: bold;
+        }
+        
+        tr:hover {
+            background: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Medical Research Blind Spot Analysis</h1>
+            <div class="subtitle">Crohn's disease</div>
+            <div class="date">Generated: November 19, 2025</div>
+        </header>
+
+        <!-- Executive Summary -->
+        <div class="section">
+            <h2>📊 Executive Summary</h2>
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="metric-label">Papers Analyzed</div>
+                    <div class="metric-value">500</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Blind Spots Identified</div>
+                    <div class="metric-value">4</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Critical Gaps</div>
+                    <div class="metric-value">3</div>
+                </div>
+            </div>
+            
+            <h3>Overview</h3>
+            <p># Executive Summary: Research Gap Analysis for Crohn's Disease</p><p></p><p>This analysis examined 500 studies from a corpus of 93,191 available publications on Crohn's disease to identify critical gaps in research population representation. The findings reveal substantial demographic blind spots that limit the generalizability of current evidence and raise significant concerns about research equity. While Crohn's disease affects diverse populations across the lifespan, our analysis demonstrates that current research disproportionately focuses on working-age adults while systematically excluding or inadequately documenting vulnerable and understudied populations.</p><p></p><p>Three critical gaps demand immediate attention. First, **older adults over 75 years are severely underrepresented**, appearing in only 0.2% of studies despite the growing elderly population and unique disease management challenges in this age group. Second, **pregnant women are almost entirely excluded from research**, with only 10 of 500 studies (2.0%) addressing this population, creating a dangerous evidence vacuum for managing Crohn's disease during pregnancy. Third, **fundamental demographic data collection is inadequate**: 81.6% of studies failed to specify gender and 78.6% did not report ethnicity, making it impossible to identify disparities or ensure equitable treatment approaches across diverse populations. Nearly half of all studies (45.2%) did not specify age ranges at all, further obscuring population coverage.</p><p></p><p>These findings have profound implications for clinical practice, health equity, and research funding priorities. The systematic exclusion of elderly patients, pregnant women, and the failure to document demographic characteristics perpetuates knowledge gaps that may contribute to suboptimal care and health disparities. We recommend that funding agencies prioritize studies addressing these underrepresented populations and establish mandatory demographic reporting standards. Without deliberate action to address these blind spots, evidence-based medicine for Crohn's disease will continue to inadequately serve significant portions of affected populations.</p>
+            
+            
+            <h3>Critical Findings</h3>
+            <ul>
+                <li>Severely underrepresented: Adults over 75 (only 0.2% of studies)</li><li>Pregnant women severely underrepresented (only 10 of 500 studies)</li><li>Ethnicity not specified in majority of studies (393 of 500)</li>
+            </ul>
+            
+        </div>
+
+        <!-- Literature Overview -->
+        <div class="section">
+            <h2>📚 Literature Overview</h2>
+            <table>
+                <tr>
+                    <th>Metric</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>Total Papers Found in Database</td>
+                    <td>93,191</td>
+                </tr>
+                <tr>
+                    <td>Papers Retrieved for Analysis</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Papers Successfully Analyzed</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Primary Source</td>
+                    <td>Europe PMC</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Demographic Analysis -->
+        <div class="section">
+            <h2>👥 Demographic Analysis</h2>
+            
+            <div class="chart-grid">
+                <div>
+                    <h3>Age Distribution</h3>
+                    <div class="chart-container">
+                        <canvas id="ageChart"></canvas>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3>Gender Distribution</h3>
+                    <div class="chart-container">
+                        <canvas id="genderChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Ethnicity Distribution</h3>
+            <div class="chart-container">
+                <canvas id="ethnicityChart"></canvas>
+            </div>
+            
+            <h3>Pregnancy Status</h3>
+            <table>
+                <tr>
+                    <th>Status</th>
+                    <th>Percentage</th>
+                </tr>
+                <tr>
+                    <td>Pregnancy Mentioned</td>
+                    <td>2.0%</td>
+                </tr>
+                <tr>
+                    <td>Not Mentioned</td>
+                    <td>98.0%</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Blind Spots -->
+        <div class="section">
+            <h2>🎯 Identified Blind Spots</h2>
+            <p>The following research gaps have been identified through systematic analysis:</p>
+            
+            
+                <div class="blind-spot high">
+                    <span class="severity-badge high">high</span>
+                    <strong>age:</strong> Severely underrepresented: Adults over 75 (only 0.2% of studies)
+                    <br>
+                    <small style="color: #666; margin-top: 5px; display: inline-block;">
+                        Affects 499 of 500 studies
+                    </small>
+                </div>
+            
+                <div class="blind-spot high">
+                    <span class="severity-badge high">high</span>
+                    <strong>pregnancy:</strong> Pregnant women severely underrepresented (only 10 of 500 studies)
+                    <br>
+                    <small style="color: #666; margin-top: 5px; display: inline-block;">
+                        Affects 490 of 500 studies
+                    </small>
+                </div>
+            
+                <div class="blind-spot medium">
+                    <span class="severity-badge medium">medium</span>
+                    <strong>gender:</strong> Gender not specified in 408 studies (81.6%)
+                    <br>
+                    <small style="color: #666; margin-top: 5px; display: inline-block;">
+                        Affects 408 of 500 studies
+                    </small>
+                </div>
+            
+                <div class="blind-spot high">
+                    <span class="severity-badge high">high</span>
+                    <strong>ethnicity:</strong> Ethnicity not specified in majority of studies (393 of 500)
+                    <br>
+                    <small style="color: #666; margin-top: 5px; display: inline-block;">
+                        Affects 393 of 500 studies
+                    </small>
+                </div>
+            
+        </div>
+
+        <!-- Recommendations -->
+        <div class="section">
+            <h2>💡 Recommendations for Future Research</h2>
+            <p>Based on the identified gaps, we recommend the following research priorities:</p>
+            
+            
+                <div class="recommendation high-priority">
+                    <span class="priority-badge high">high Priority</span>
+                    <h3>Recommendation 1: Adults over 75 with Crohn's disease</h3>
+                    <p><strong>Rationale:</strong> With only 0.2% of studies including this age group, there is critical knowledge gap regarding disease management, medication safety, and surgical outcomes in elderly patients who have different comorbidity profiles and treatment tolerances than younger populations.</p>
+                    <p><strong>Suggested Study Design:</strong> Prospective cohort study with nested case-control analysis</p>
+                </div>
+            
+                <div class="recommendation high-priority">
+                    <span class="priority-badge high">high Priority</span>
+                    <h3>Recommendation 2: Pregnant women with Crohn's disease</h3>
+                    <p><strong>Rationale:</strong> Severe underrepresentation (only 2% of studies) leaves clinicians without adequate evidence for managing disease activity, medication safety, and maternal-fetal outcomes during pregnancy and lactation.</p>
+                    <p><strong>Suggested Study Design:</strong> Multicenter prospective pregnancy registry with long-term offspring follow-up</p>
+                </div>
+            
+                <div class="recommendation high-priority">
+                    <span class="priority-badge high">high Priority</span>
+                    <h3>Recommendation 3: Diverse ethnic populations with Crohn's disease</h3>
+                    <p><strong>Rationale:</strong> With 78.6% of studies not specifying ethnicity, there is insufficient data on disease phenotypes, genetic susceptibility, treatment response, and outcomes across different racial and ethnic groups, potentially perpetuating health disparities.</p>
+                    <p><strong>Suggested Study Design:</strong> Large-scale multinational cohort study with mandatory ethnicity documentation and stratified analysis</p>
+                </div>
+            
+                <div class="recommendation medium-priority">
+                    <span class="priority-badge medium">medium Priority</span>
+                    <h3>Recommendation 4: Gender-stratified analysis in Crohn's disease populations</h3>
+                    <p><strong>Rationale:</strong> With 81.6% of studies not specifying gender, potential sex-based differences in disease presentation, hormonal influences, treatment efficacy, and adverse events remain poorly characterized.</p>
+                    <p><strong>Suggested Study Design:</strong> Systematic requirement for sex-disaggregated data reporting in clinical trials with pre-specified subgroup analyses</p>
+                </div>
+            
+                <div class="recommendation high-priority">
+                    <span class="priority-badge high">high Priority</span>
+                    <h3>Recommendation 5: Intersectional populations (elderly ethnic minority women with Crohn's disease)</h3>
+                    <p><strong>Rationale:</strong> Multiple underrepresented categories intersect to create virtually invisible patient populations in research, potentially facing compounded disparities in diagnosis, treatment access, and outcomes.</p>
+                    <p><strong>Suggested Study Design:</strong> Targeted recruitment observational study with community partnerships and patient-reported outcome measures</p>
+                </div>
+            
+        </div>
+
+        <footer>
+            <p>Generated by Medical Research Blind Spot Analyzer</p>
+            <p>This report is based on automated analysis and should be reviewed by domain experts.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Age Distribution Chart
+        new Chart(document.getElementById('ageChart'), {
+            type: 'bar',
+            data: {
+                labels: ["18-65","not specified",">60","40-50","0-18","≥16","≥60","65-75","18+","2-17","≤45",">45","18-80","17-70","65+","10-18","18-28","12-16","30-39","16-75","6-18","11-17","17-77",">50","<6",">75"],
+                datasets: [{
+                    label: 'Percentage of Studies',
+                    data: [16.8,45.2,0.2,0.4,8.8,0.4,0.4,0.4,0.6,0.2,0.2,0.2,0.2,0.2,0.4,0.2,0.2,0.2,0.2,0.2,0.4,0.2,0.2,0.2,0.2,0.2],
+                    backgroundColor: 'rgba(102, 126, 234, 0.8)',
+                    borderColor: 'rgba(102, 126, 234, 1)',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+
+        // Gender Distribution Chart
+        new Chart(document.getElementById('genderChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ["male","female","not_specified"],
+                datasets: [{
+                    data: [12.4,12,81.6],
+                    backgroundColor: [
+                        'rgba(102, 126, 234, 0.8)',
+                        'rgba(118, 75, 162, 0.8)',
+                        'rgba(255, 152, 0, 0.8)',
+                        'rgba(156, 39, 176, 0.8)'
+                    ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+
+        // Ethnicity Distribution Chart
+        new Chart(document.getElementById('ethnicityChart'), {
+            type: 'bar',
+            data: {
+                labels: ["not specified","Caucasian","Iranian","Japanese","Asian","Chinese","South Asian","White","Egyptian","Mongolian"],
+                datasets: [{
+                    label: 'Percentage of Studies',
+                    data: [78.6,0.8,0.2,0.6,0.4,0.6,0.2,0.4,0.2,0.2],
+                    backgroundColor: 'rgba(118, 75, 162, 0.8)',
+                    borderColor: 'rgba(118, 75, 162, 1)',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
