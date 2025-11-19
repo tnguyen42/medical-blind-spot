@@ -1,0 +1,219 @@
+{
+  "total_papers_analyzed": 10,
+  "population_coverage": {
+    "age": {
+      "not specified": "100.0%"
+    },
+    "gender": {
+      "not_specified": "100.0%"
+    },
+    "ethnicity": {
+      "not specified": "100.0%"
+    },
+    "pregnancy_status": {
+      "pregnant": "0.0%",
+      "not_mentioned": "100.0%"
+    },
+    "geographic": {}
+  },
+  "blind_spots": [
+    {
+      "category": "age",
+      "gap": "Severely underrepresented: Adults over 75 (only 0.0% of studies)",
+      "severity": "critical",
+      "affectedCount": 10
+    },
+    {
+      "category": "age",
+      "gap": "Underrepresented: Pediatric population (only 0.0% of studies)",
+      "severity": "high",
+      "affectedCount": 10
+    },
+    {
+      "category": "pregnancy",
+      "gap": "No studies mentioned pregnant women or pregnancy status",
+      "severity": "critical",
+      "affectedCount": 10
+    },
+    {
+      "category": "gender",
+      "gap": "Gender not specified in 10 studies (100.0%)",
+      "severity": "medium",
+      "affectedCount": 10
+    },
+    {
+      "category": "ethnicity",
+      "gap": "Ethnicity not specified in majority of studies (10 of 10)",
+      "severity": "high",
+      "affectedCount": 10
+    },
+    {
+      "category": "geographic",
+      "gap": "Limited geographic diversity (only 0 regions represented)",
+      "severity": "medium",
+      "affectedCount": 10
+    }
+  ],
+  "raw_demographics": [
+    {
+      "paperId": "10.1177/11786329251388775",
+      "title": "Exploring the Delivery and Management of Specialised Post-Diagnostic Care and Support in Young-Onset Dementia: A Cross-Sectional Study.",
+      "ageRanges": [
+        "not specified"
+      ],
+      "genderDistribution": {
+        "notSpecified": true
+      },
+      "ethnicities": [
+        "not specified"
+      ],
+      "pregnancyMentioned": false,
+      "geographicLocation": [],
+      "comorbidities": []
+    },
+    {
+      "paperId": "10.1097/wad.0000000000000695",
+      "title": "Proper Name Recall as an Early Indicator of Preclinical Alzheimer Disease Pathology.",
+      "ageRanges": [
+        "not specified"
+      ],
+      "genderDistribution": {
+        "notSpecified": true
+      },
+      "ethnicities": [
+        "not specified"
+      ],
+      "pregnancyMentioned": false,
+      "geographicLocation": [],
+      "comorbidities": []
+    },
+    {
+      "paperId": "10.1097/wad.0000000000000682",
+      "title": "The Impact of Awareness of Disease on Quality of Life of People With Alzheimer's Disease.",
+      "ageRanges": [
+        "not specified"
+      ],
+      "genderDistribution": {
+        "notSpecified": true
+      },
+      "ethnicities": [
+        "not specified"
+      ],
+      "pregnancyMentioned": false,
+      "geographicLocation": [],
+      "comorbidities": []
+    },
+    {
+      "paperId": "10.1097/wad.0000000000000692",
+      "title": "rs140926439 Variant in the Fibronectin FN1 Gene Lowers Risk of Alzheimer Disease in APOEε4 Carriers in the UK Biobank Cohort.",
+      "ageRanges": [
+        "not specified"
+      ],
+      "genderDistribution": {
+        "notSpecified": true
+      },
+      "ethnicities": [
+        "not specified"
+      ],
+      "pregnancyMentioned": false,
+      "geographicLocation": [],
+      "comorbidities": []
+    },
+    {
+      "paperId": "10.1097/wad.0000000000000700",
+      "title": "Alzheimer Disease Patients Who Survived COVID-19 Have Rapid Disease Progression and a Higher Risk of Death at 5-year Follow-up: A Retrospective Cohort Study.",
+      "ageRanges": [
+        "not specified"
+      ],
+      "genderDistribution": {
+        "notSpecified": true
+      },
+      "ethnicities": [
+        "not specified"
+      ],
+      "pregnancyMentioned": false,
+      "geographicLocation": [],
+      "comorbidities": []
+    },
+    {
+      "paperId": "10.21203/rs.3.rs-7962593/v1",
+      "title": "The Knight Alzheimer Research Imaging (KARI) dataset: a comprehensive multimodal resource for exploring aging, preclinical, and symptomatic Alzheimer disease pathology",
+      "ageRanges": [
+        "not specified"
+      ],
+      "genderDistribution": {
+        "notSpecified": true
+      },
+      "ethnicities": [
+        "not specified"
+      ],
+      "pregnancyMentioned": false,
+      "geographicLocation": [],
+      "comorbidities": []
+    },
+    {
+      "paperId": "10.2174/0115672050421769250929051818",
+      "title": "Auditory Hallucinations as the First Symptom of Alzheimer´s Disease - A Case Report.",
+      "ageRanges": [
+        "not specified"
+      ],
+      "genderDistribution": {
+        "notSpecified": true
+      },
+      "ethnicities": [
+        "not specified"
+      ],
+      "pregnancyMentioned": false,
+      "geographicLocation": [],
+      "comorbidities": []
+    },
+    {
+      "paperId": "PMC12597681",
+      "title": "Novel Insights into Neurodegenerative Diseases : From Mechanisms to New Animal Models and Therapies",
+      "ageRanges": [
+        "not specified"
+      ],
+      "genderDistribution": {
+        "notSpecified": true
+      },
+      "ethnicities": [
+        "not specified"
+      ],
+      "pregnancyMentioned": false,
+      "geographicLocation": [],
+      "comorbidities": []
+    },
+    {
+      "paperId": "10.1037/neu0001041",
+      "title": "Expressive prosody in behavioral variant frontotemporal degeneration and late-onset psychiatric disorders.",
+      "ageRanges": [
+        "not specified"
+      ],
+      "genderDistribution": {
+        "notSpecified": true
+      },
+      "ethnicities": [
+        "not specified"
+      ],
+      "pregnancyMentioned": false,
+      "geographicLocation": [],
+      "comorbidities": []
+    },
+    {
+      "paperId": "10.2196/71920",
+      "title": "Digital Measurement of Subjective Experiences in Alzheimer Disease and Related Dementias (AD/ADRD). ",
+      "ageRanges": [
+        "not specified"
+      ],
+      "genderDistribution": {
+        "notSpecified": true
+      },
+      "ethnicities": [
+        "not specified"
+      ],
+      "pregnancyMentioned": false,
+      "geographicLocation": [],
+      "comorbidities": []
+    }
+  ]
+}
