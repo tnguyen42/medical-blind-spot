@@ -1,9 +1,10 @@
 import { searchLiterature, saveToJSON } from './agents/literatureSearch.js';
 import { analyzePopulation, saveAnalysisToJSON } from './agents/populationAnalysis.js';
+import { generateSynthesisReport, saveSynthesisReport } from './agents/synthesisReporting.js';
 
 async function main() {
   try {
-    const disease = 'Alzheimer';
+    const disease = 'Crohn\'s disease';
     
     // Step 1: Literature Search Agent (B)
     console.log('='.repeat(60));
@@ -33,7 +34,7 @@ async function main() {
     await saveAnalysisToJSON(analysisResult, analysisFilename);
     
     console.log('='.repeat(60));
-    console.log('SUMMARY');
+    console.log('INTERMEDIATE RESULTS');
     console.log('='.repeat(60));
     console.log(`✓ Analyzed ${analysisResult.total_papers_analyzed} papers`);
     console.log(`✓ Identified ${analysisResult.blind_spots.length} blind spots`);
@@ -47,10 +48,33 @@ async function main() {
         console.log(`  ${emoji} [${spot.severity.toUpperCase()}] ${spot.gap}`);
       }
     }
+
+    // Step 3: Synthesis & Reporting Agent (E)
+    console.log('\n' + '='.repeat(60));
+    console.log('AGENT E: SYNTHESIS & REPORTING');
+    console.log('='.repeat(60));
+    
+    const synthesisReport = await generateSynthesisReport(
+      disease,
+      searchResult,
+      analysisResult
+    );
+    
+    const reportFilename = `${disease}_final_report`;
+    await saveSynthesisReport(synthesisReport, reportFilename);
+    
+    console.log('='.repeat(60));
+    console.log('FINAL SUMMARY');
+    console.log('='.repeat(60));
+    console.log(`✓ Executive summary generated`);
+    console.log(`✓ ${synthesisReport.recommendations.length} recommendations created`);
+    console.log(`✓ Interactive HTML report: ${reportFilename}.html`);
+    console.log(`✓ JSON report: ${reportFilename}.json`);
     
     console.log('\n' + '='.repeat(60));
-    console.log('✓ Pipeline completed successfully!');
-    console.log('='.repeat(60) + '\n');
+    console.log('✓ COMPLETE PIPELINE FINISHED SUCCESSFULLY!');
+    console.log('='.repeat(60));
+    console.log(`\n📄 Open ${reportFilename}.html in your browser to view the full report.\n`);
     
   } catch (error) {
     console.error('\n❌ Error:', error);
