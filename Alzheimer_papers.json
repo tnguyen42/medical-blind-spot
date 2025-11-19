@@ -1,0 +1,96 @@
+{
+  "query": "Alzheimer",
+  "total_results": 260781,
+  "papers": [
+    {
+      "doi": "10.1177/11786329251388775",
+      "title": "Exploring the Delivery and Management of Specialised Post-Diagnostic Care and Support in Young-Onset Dementia: A Cross-Sectional Study.",
+      "authors": "van Westendorp S, Hofman C, Mortier M, Appelhof B, Gerring P, Koopmans R, Bakker C.",
+      "journal": "Unknown",
+      "publication_date": "2025",
+      "abstract": "IntroductionThe need for tailored services for individuals with young-onset dementia (YOD) is well established. Specialised services exist but regional disparities may hinder timely and appropriate care and support. Yet, a comprehensive overview of such services is currently lacking.ObjectiveTo examine regional disparities in the delivery, access and management of YOD-specialised services in the Netherlands, revealing service gaps and opportunities for future development.DesignAn exploratory cross-sectional survey (YOD self-scan) was developed and distributed to 39 Dutch healthcare organisations affiliated with a national YOD knowledge infrastructure, ensuring broad geographical representation.MethodsQuantitative and qualitative data were collected through open- and closed-ended questions between July and August 2023. Descriptive statistics and manifest content analyses were used to assess the delivery and management of YOD-specialised services in terms of utilisation, capacity, accessibility, variety and organisational factors.ResultsA total of 1707 individuals with YOD utilised outpatient services, and 801 received permanent residential care. Service delivery and management varied across regions. Rural organisations reported shorter waiting times, more employees who had received specific YOD training, and higher day care utilisation per organisation. Urban organisations offered a broader range of services and more involvement of local governments. Most organisations (72.4%) reported service gaps, including limited day care options, inflexible residential services, and insufficient support for carers, especially children of individuals with YOD. Also, the need for more innovative services and improved coordination was identified.ConclusionsYOD-specialised services are underutilised, likely due to unequal accessibility and regional disparities in the delivery and management of services. Addressing service gaps, expanding capacity, and enhancing knowledge exchange are important for equitable, high-quality care. These findings may inform future research and international efforts to improve equitable access and management of specialised dementia services.",
+      "source": "Europe PMC"
+    },
+    {
+      "doi": "10.1097/wad.0000000000000695",
+      "title": "Proper Name Recall as an Early Indicator of Preclinical Alzheimer Disease Pathology.",
+      "authors": "Mueller KD, Soldan A, Langhough R, Bruno D, Jauregi-Zinkunegi A, Basche K, Hale MR, He D, Moghekar A, Hermann B, Albert M, Pettigrew C.",
+      "journal": "Unknown",
+      "publication_date": "2025",
+      "abstract": "BackgroundEarly detection of Alzheimer disease (AD) is crucial; however, standard neuropsychological tests often lack sensitivity. Process scores, such as proper name (PN) recall from Logical Memory, may improve the detection of AD-related biomarker positivity. We examined whether baseline PN recall predicted future cerebrospinal fluid (CSF) amyloid (Aβ42/Aβ40) and tau (pTau181) status, and whether biomarker status predicted PN recall trajectories.MethodsWe analyzed 271 cognitively unimpaired BIOCARD participants (mean age=57.3, 60.3% female, mean follow-up=15.5) using logistic regression and mixed-effects models to examine the associations between PN recall and CSF biomarkers.ResultsHigher baseline PN recall predicted lower amyloid positivity [odds ratio (OR)=0.72, P=0.015]. Amyloid and tau positivity have been linked to a faster decline in PN. Biomarker-positive participants in the biomarker-negative group lacked practice effects.ConclusionsPN recall predicts future AD biomarker positivity and may enhance early detection of AD-related cognitive decline.",
+      "source": "Europe PMC"
+    },
+    {
+      "doi": "10.1097/wad.0000000000000682",
+      "title": "The Impact of Awareness of Disease on Quality of Life of People With Alzheimer's Disease.",
+      "authors": "Nogueira MML, Oliveira F, Belfort T, Monteiro A, Gaigher J, Dourado MCN.",
+      "journal": "Unknown",
+      "publication_date": "2025",
+      "abstract": "BackgroundQuality of life (QoL) is a complex concept, potentially influenced by subjective well-being. This study aims to identify clinical characteristics related to QoL evaluation across different levels of awareness of disease and determine whether QoL in individuals with Alzheimer disease correlates with emotional or cognitive/functional domains at varying levels of awareness of disease.MethodsQoL was assessed in 179 individuals with Alzheimer disease, comparing 3 groups: N=32 with preserved awareness, N=88 with mildly impaired awareness, and N=59 with severe deficit/absent awareness. Participants and caregivers completed questionnaires about QoL, awareness of disease, cognition, dementia severity, functionality, neuropsychiatric symptoms, and depression.ResultsIndividuals with preserved awareness reported lower QoL than those with mildly impaired awareness. The severe deficit/absent awareness group showed greater cognitive impairment (P=0.010), more neuropsychiatric symptoms (PConclusionsAwareness of disease inversely influences QoL evaluation. Psychosocial and emotional factors prevail in higher awareness deficits, whereas functional aspects are more important in lower deficits.",
+      "source": "Europe PMC"
+    },
+    {
+      "doi": "10.1097/wad.0000000000000692",
+      "title": "rs140926439 Variant in the Fibronectin FN1 Gene Lowers Risk of Alzheimer Disease in APOEε4 Carriers in the UK Biobank Cohort.",
+      "authors": "Lehrer S, Lehrer S, Rheinstein PH.",
+      "journal": "Unknown",
+      "publication_date": "2025",
+      "abstract": "BackgroundA genetic variant in the fibronectin FN1 gene reduces the odds of developing AD by up to 70%. This variant, rs140926439, appears to prevent the buildup of excess fibronectin at the blood brain barrier. Increased fibronectin levels are typically observed in people with Alzheimer disease (AD), but the variant appears to counteract its effects. Our study aims to replicate findings from previous research that identified a relationship between the fibronectin FN1 gene variant rs140926439 and a lower risk of Alzheimer disease (AD) in APOEε4 carriers.MethodsWe analyzed the relationship of FN1 SNP rs140926439, APOEε4, and AD in the UK Biobank cohort.ResultsWhen rs140926439 was absent, 0.10% of APOEε2/3 carriers had AD, while 0.43% of APOEε4 carriers or homozygotes had AD. This difference was significant (PConclusionFibronectin is an adhesive molecule that is essential to wound healing, especially to the production of the extracellular matrix and reepithelialization. Some cases of AD may be due to the initiation of the brain wound healing process, often in the absence of any actual wound. NSAIDS may reduce the risk of AD because they potently inhibit wound healing. FN1 appears to be a key player in AD, and its risk-lowering variant could offer insights into potential therapeutic targets. However, further research is needed to fully understand the intricate mechanisms underlying AD and to develop effective treatments.",
+      "source": "Europe PMC"
+    },
+    {
+      "doi": "10.1097/wad.0000000000000700",
+      "title": "Alzheimer Disease Patients Who Survived COVID-19 Have Rapid Disease Progression and a Higher Risk of Death at 5-year Follow-up: A Retrospective Cohort Study.",
+      "authors": "Ursi GZ, da Silva MR, Nakakogue LM, Fernandes KBP, Bignardi PR.",
+      "journal": "Unknown",
+      "publication_date": "2025",
+      "abstract": "PurposeAlzheimer disease (AD) is the most common neurodegenerative disorder, affecting millions worldwide. COVID-19 has increased the risk of acute complications and death for patients with AD, but the long-term effects on survivors have been little studied. Thus, given the potential role of SARS-CoV-2 in accelerating cognitive decline, this study aimed to assess the effect of COVID-19 on functional deterioration, AD progression, and mortality in these patients.MethodsThis retrospective cohort study examined medical records of patients with mild to moderate AD treated at a public dementia clinic in southern Brazil between March 2020 and March 2025. Sociodemographic and clinical data were extracted, including COVID-19 status confirmed by molecular testing. AD progression was assessed using the Mini-Mental State Examination (MMSE) and the Katz Index. Multivariate statistical analyses were conducted to identify associations between COVID-19 infection and disease progression. Survival was described by Kaplan-Meier test and analyzed by Cox regression.ResultsA total of 105 individuals with DA were included, of whom 28 (26.7%) were COVID-19 survivors during the follow-up period. COVID-19 patients showed rapid AD progression compared with the control group (OR 4.76; 95% CI: 1.04-21.7; P = 0.044). Likewise, SARS-CoV-2 infection decreased patients' functionality, as indicated by the Katz index (P=0.001). Functional impairment was observed in both mild and hospitalized cases of COVID-19. Hospitalized patients during COVID-19 demonstrated lower survival rates at the 5-year follow-up.ConclusionThese findings suggest that SARS-CoV-2 infection may accelerate AD progression and reduce survival, particularly in cases requiring hospitalization. Future multicenter studies with large sample sizes are needed to confirm these findings.",
+      "source": "Europe PMC"
+    },
+    {
+      "doi": "10.21203/rs.3.rs-7962593/v1",
+      "title": "The Knight Alzheimer Research Imaging (KARI) dataset: a comprehensive multimodal resource for exploring aging, preclinical, and symptomatic Alzheimer disease pathology",
+      "authors": "Benzinger T, Hoagey D, McKay N, Joseph-Mathurin N, Flores S, Doering S, Hornbeck R, Smith T, Scott J, Chen G, Massoumzadeh P, LaMontagne P, Wang Q, Hassenstab J, Ponisio M, Denny A, Balls-Berry J, Snider J, Stark S, Xiong C, Schindler S, Perrin R, Shimony J, Goyal M, Vlassenko A, Raichle M, Morris J, Raji C, Gordon B.",
+      "journal": "Unknown",
+      "publication_date": "2025",
+      "abstract": "Abstract  Alzheimer disease (AD) remains a significant global public health challenge, requiring robust multimodal datasets to elucidate its prolonged preclinical phase, improve early detection, advance understanding of disease trajectories, and guide intervention strategies. To address this, the Charles F. and Joanne Knight Alzheimer Disease Research Center (Knight ADRC) at Washington University in St. Louis established the Knight Alzheimer Research Imaging (KARI) dataset. This paper characterizes this dataset emphasizing its phenotypical depth and longitudinal scope, detailing comprehensive multimodal neuroimaging from 1,645 participants (aged 42-97) across 6,217 acquisitions. Spanning the AD spectrum from healthy aging to symptomatic disease, the cohort undergoes extensive longitudinal imaging using structural and functional magnetic resonance imaging (MRI) alongside positron emission tomography (PET) tracers for amyloid and tau pathology. This is complemented by rich clinical, cognitive, genetic, and biomarker data. In addition to raw imaging, the dataset provides quality-controlled processed outputs, including anatomical segmentations and biomarker quantification. By making this data accessible to researchers, the Knight ADRC aims to accelerate discoveries in pathophysiology, biomarker identification, and therapeutic development.",
+      "source": "Europe PMC"
+    },
+    {
+      "doi": "10.2174/0115672050421769250929051818",
+      "title": "Auditory Hallucinations as the First Symptom of Alzheimer´s Disease - A Case Report.",
+      "authors": "Hüsing T, Quante A.",
+      "journal": "Unknown",
+      "publication_date": "2025",
+      "abstract": "Introduction/backgroundNeuropsychiatric symptoms frequently occur in patients with Alzheimer´s disease (AD); apathy, depression, delusions, optical hallucinations, anxiety, and agitation often appear as first symptoms of AD, while auditory hallucinations have never been described as the first symptom. In this case report, we describe a case of a woman who had auditory hallucinations as the first symptom of AD.Case presentationAn 85-year-old woman was admitted to our hospital suffering from imperative auditory hallucinations without subjective and minimal objective memory complaints. Further diagnostics with an MRI scan, neuropsychological tests, and an analysis of cerebral spinal fluid were accomplished. AD was confirmed during the hospital stay, suggesting auditory hallucinations as the first symptom of AD. She was temporarily treated with risperidone, which improved the hallucinations.ConclusionAcoustic hallucinations in older age could be the first symptom of AD and even occur before cognitive decline.",
+      "source": "Europe PMC"
+    },
+    {
+      "doi": "PMC12597681",
+      "title": "Novel Insights into Neurodegenerative Diseases : From Mechanisms to New Animal Models and Therapies",
+      "authors": "Unknown",
+      "journal": "Unknown",
+      "publication_date": "2025",
+      "abstract": "No abstract available",
+      "source": "Europe PMC"
+    },
+    {
+      "doi": "10.1037/neu0001041",
+      "title": "Expressive prosody in behavioral variant frontotemporal degeneration and late-onset psychiatric disorders.",
+      "authors": "Denève A, Villain M, Bordier C, Denis C, Carpentier C, Forestier N, Renard A, Dumont J, Lopes R, Kuchcinski G, D'Hondt F, Amad A, Lebouvier T, Bertoux M.",
+      "journal": "Unknown",
+      "publication_date": "2025",
+      "abstract": "ObjectiveNeuropsychological assessment of social cognition has traditionally focused on mentalizing and emotions recognition. Recently developed digital measures allow clinicians to capture direct markers of abnormal social interactions, but they have not yet been used to distinguish neurological from psychiatric populations. This study examined prosodic alterations and explored structural neural correlates in behavioral variant frontotemporal degeneration (bvFTD) versus late-onset or atypical psychiatric disorders (LOAPD) and healthy controls (HCs).MethodWe analyzed audio recordings from 31 patients with bvFTD, 15 patients with LOAPD, and 39 HCs across two speech samples: an anamnestic interview and a narrative task. Fundamental frequency (f₀) metrics were extracted to assess between-group differences and to identify voxel-based morphometry correlates of prosodic alteration.ResultsCompared with HCs, patients with bvFTD showed a reduced f₀ range in both the anamnestic interview (p = .025, η² = .09, 95% CI [-23.83, -1.04]) and the narrative task (p = .002, η² = .14, 95% CI [-36.21, -4.74]). In the anamnestic interview, both bvFTD (p = .010, 95% CI [-36.59, -6.23]) and LOAPD (p = .012, 95% CI [-46.30, -8.81]) groups exhibited lower f₀ variability than HCs; no differences were observed during the narrative task. In bvFTD, reduced prosodic measures correlated with atrophy in the left superior frontal gyrus and the right middle and inferior temporal gyri (p ConclusionsPatients with bvFTD demonstrate a narrowed pitch span and reduced intonational variability, linked to disruptions in frontotemporal networks integrating emotional and semantic cues into speech. These findings highlight the relevance of prosodic alterations as a target for further research in bvFTD and assessment. (PsycInfo Database Record (c) 2025 APA, all rights reserved).",
+      "source": "Europe PMC"
+    },
+    {
+      "doi": "10.2196/71920",
+      "title": "Digital Measurement of Subjective Experiences in Alzheimer Disease and Related Dementias (AD/ADRD). ",
+      "authors": "Depp C, Holden J, Granholm E.",
+      "journal": "Unknown",
+      "publication_date": "2025",
+      "abstract": "Symptoms such as loss of pleasure, agitation, and sadness are subjective experiences that contribute significantly to caregiver burden and health care costs in Alzheimer disease and related dementias (AD/ADRD). However, traditional self-report measures of subjective experiences are limited in AD/ADRD due to cognitive impairments and awareness. Passive sensing, which collects data without active participant input, has emerged as a promising approach to quantify aspects of subjective experiences. Smartphones, wearables, and in-home sensors can quantify mobility, physiology, speech, and social interaction markers of constructs relevant to AD/ADRD. Available research indicates potential but is largely at the proof-of-concept stage. In this Commentary, we discuss several roadblocks to future translation of passive sensing in measuring subjective experiences in AD/ADRD, including technical implementation, data harmonization, validation, ethical and privacy principles. Addressing these challenges could lead to transformative applications to care for AD/ADRD, enabling precise monitoring of behavioral symptoms and related treatment targets, ultimately improving quality of life for persons with AD/ADRD and their caregivers.",
+      "source": "Europe PMC"
+    }
+  ]
+}
